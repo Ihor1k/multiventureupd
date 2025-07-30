@@ -10,6 +10,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 480px) {
+        flex-direction: column;
+        gap: 48px;
+    }
+}
+
+.footer img {
+    @media screen and (max-width: 480px) {
+        width: 100%;
+    }   
 }
 
 .copywriting {

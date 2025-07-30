@@ -14,7 +14,7 @@ body.noscroll {
 }
 @media screen and (max-width: 480px) {
   .sticky-section {
-    top: -100%;
+    top: -130%;
   }
 }
 
@@ -87,11 +87,41 @@ table {
   }
 }
 
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 998;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap; /* Додано */
+}
+
+.header-logo-mobile {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .header-logo-mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-logo {
+    display: none;
+  }
 }
 
 .header-menu {
@@ -194,7 +224,7 @@ body.menu-open {
     justify-content: unset;
     position: fixed;
     inset: 0;
-    height: 75%;
+    height: 70%;
     width: 100%;
     background: #fff;
     z-index: 1000;
@@ -452,15 +482,6 @@ body.menu-open {
   }
 }
 
-.hero-overlay {
-  position: absolute;
-  z-index: -2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .hero-bg {
   position: absolute;
   top: 0;
@@ -470,17 +491,46 @@ body.menu-open {
      object-fit: cover;
   z-index: -3;
 }
+@media screen and (max-width: 480px) {
+  .hero-bg {
+    display: none;
+  }
+}
+
+.hero-bg-mobile {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .hero-bg-mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: -3;
+  }
+}
 
 .hero-inner {
   width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   background: rgba(255, 255, 255, 0.23);
   /* Card */
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   padding: clamp(16px, 16px + 44 * (100vw - 320px) / 1120, 60px) clamp(16px, 16px + 210 * (100vw - 320px) / 1120, 226px);
+}
+@media screen and (max-width: 480px) {
+  .hero-inner {
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+  }
 }
 
 .hero-block {
@@ -770,7 +820,7 @@ body.menu-open {
 }
 @media screen and (max-width: 480px) {
   .info {
-    top: -500%;
+    top: -4721px;
   }
 }
 
@@ -991,6 +1041,12 @@ body.menu-open {
   position: relative;
   padding-bottom: 220px;
 }
+@media screen and (max-width: 480px) {
+  .why {
+    padding-bottom: unset;
+    margin-top: 100px;
+  }
+}
 
 .why .container {
   position: relative;
@@ -1006,6 +1062,27 @@ body.menu-open {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: 2;
+}
+@media screen and (max-width: 480px) {
+  .why-bg {
+    display: none;
+  }
+}
+
+.why-mobile-bg {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .why-mobile-bg {
+    display: block;
+    position: absolute;
+    top: 280px;
+    left: 0;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: 2;
+  }
 }
 
 .why-suptitle {
@@ -1060,6 +1137,12 @@ body.menu-open {
   background: none;
   cursor: pointer;
 }
+@media screen and (max-width: 480px) {
+  .why-button-prev,
+.why-button-next {
+    display: none;
+  }
+}
 
 .why-swiper {
   margin-top: 60px;
@@ -1078,13 +1161,16 @@ body.menu-open {
   padding: clamp(16px, 2vw, 24px);
   width: 33%;
   border-radius: 20px;
+  backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
-  border: 0.5px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 480px) {
   .why-slide {
     height: unset !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 }
 
@@ -1166,13 +1252,14 @@ body.menu-open {
 .pro-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: clamp(16px, 2vw, 24px);
   width: 58%;
 }
 @media screen and (max-width: 480px) {
   .pro-list {
     width: 100%;
     margin-top: 40px;
+    gap: 24px;
   }
 }
 
@@ -1211,13 +1298,15 @@ body.menu-open {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(20px, 3vw, 60px);
+  gap: clamp(40px, 3vw, 60px);
   border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(227, 230, 254, 0.3);
   background: rgba(255, 255, 255, 0.3);
   /* Card */
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   padding: clamp(24px, 11.04vw, 130px) 24px;
 }
 
@@ -1225,7 +1314,7 @@ body.menu-open {
   color: var(--primary-200, #4C4648);
   text-align: center;
   font-family: "Nunito Sans";
-  font-size: 56px;
+  font-size: clamp(40px, 4vw, 56px);
   font-style: normal;
   font-weight: 700;
   line-height: 80%; /* 44.8px */
@@ -1236,7 +1325,7 @@ body.menu-open {
   color: var(--primary-400, #282828);
   text-align: center;
   font-family: "Nunito Sans";
-  font-size: 28px;
+  font-size: clamp(24px, 2vw, 28px);
   font-style: normal;
   font-weight: 500;
   line-height: 120%; /* 33.6px */
@@ -1259,6 +1348,11 @@ body.menu-open {
   cursor: pointer;
   transition: all 300ms ease-in-out;
 }
+@media screen and (max-width: 480px) {
+  .button {
+    width: 100%;
+  }
+}
 
 .button:hover {
   background: var(--primary-100, #726968);
@@ -1280,6 +1374,18 @@ body.menu-open {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .footer .container {
+    flex-direction: column;
+    gap: 48px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer img {
+    width: 100%;
+  }
 }
 
 .copywriting {

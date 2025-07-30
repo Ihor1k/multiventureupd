@@ -49,11 +49,12 @@
 .pro-list {
     display: flex;  
     flex-wrap: wrap;
-    gap: 24px;
+    gap: clamp(16px, 2vw, 24px);
     width: 58%;
     @media screen and (max-width: 480px) {
         width: 100%;
         margin-top: 40px;
+        gap: 24px;
     }
 }
 

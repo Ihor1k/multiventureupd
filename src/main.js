@@ -109,21 +109,31 @@ const burger = document.querySelector('.burger');
 const burgerClose = document.querySelector('.burger-close');
 const headerMenu = document.querySelector('.header-menu');
 const headerLinks = document.querySelectorAll('.header-link');
+const menuOverlay = document.querySelector('.menu-overlay');
   
-if (burger && burgerClose && headerMenu) {
+if (burger && burgerClose && headerMenu && menuOverlay) {
   burger.addEventListener('click', () => {
     headerMenu.classList.add('open');
+    menuOverlay.classList.add('active');
     document.body.classList.add('menu-open');
   });
 
   burgerClose.addEventListener('click', () => {
     headerMenu.classList.remove('open');
+    menuOverlay.classList.remove('active');
     document.body.classList.remove('menu-open');
   });
+
+  menuOverlay.addEventListener('click', () => {
+    headerMenu.classList.remove('open');
+    menuOverlay.classList.remove('active'); // ховаємо затемнення
+    document.body.classList.remove('menu-open');
+  }); 
 
   headerLinks.forEach(link => {
     link.addEventListener('click', () => {
       headerMenu.classList.remove('open');
+      menuOverlay.classList.remove('active');
       document.body.classList.remove('menu-open');
     });
   });

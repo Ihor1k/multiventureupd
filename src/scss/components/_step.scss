@@ -29,14 +29,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: clamp(20px, 3vw, 60px);
+    gap: clamp(40px, 3vw, 60px);
 
     border-radius: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(227, 230, 254, 0.30);
     background: rgba(255, 255, 255, 0.30);
 
     /* Card */
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     padding: clamp(24px, 11.04vw, 130px) 24px;
 
 }
@@ -45,7 +48,7 @@
     color: var(--primary-200, #4C4648);
     text-align: center;
     font-family: "Nunito Sans";
-    font-size: 56px;
+    font-size: clamp(40px, 4vw, 56px);
     font-style: normal;
     font-weight: 700;
     line-height: 80%; /* 44.8px */
@@ -56,7 +59,7 @@
     color: var(--primary-400, #282828);
     text-align: center;
     font-family: "Nunito Sans";
-    font-size: 28px;
+    font-size: clamp(24px, 2vw, 28px);
     font-style: normal;
     font-weight: 500;
     line-height: 120%; /* 33.6px */
@@ -80,6 +83,9 @@
     line-height: 1.4; /* 22.4px */
     cursor: pointer;
     transition: all 300ms ease-in-out;
+    @media screen and (max-width: 480px) {
+        width: 100%;   
+    }
 }
 
 .button:hover {
