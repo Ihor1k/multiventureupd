@@ -1,5 +1,5 @@
 const popup = document.getElementById('popup');
-const openButtons = document.querySelectorAll('.button, .header-button');
+const openButtons = document.querySelectorAll('.button, .header-button, .hero-btn');
 const closeBtn = document.querySelector('.close-popup');
 const form = document.getElementById('joinForm');
 const successPopup = document.getElementById('successPopup');
