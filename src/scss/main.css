@@ -770,7 +770,7 @@ body.menu-open {
 }
 @media screen and (max-width: 480px) {
   .info {
-    top: -470%;
+    top: -500%;
   }
 }
 
