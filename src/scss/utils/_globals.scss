@@ -1,0 +1,26 @@
+html {
+    scroll-behavior: smooth;
+}
+
+// body {
+//     background-color: #fff;
+// }
+
+body.noscroll {
+    overflow: hidden;
+}
+
+
+.sticky-section {
+    position: sticky !important;
+    top: -50%;
+    // height: 150vh;
+    @media screen and (max-width: 480px) {
+        top: -100%;
+    }
+  }
+  
+//   .sticky-inner {
+//      /* блокуємо у верхній частині екрана */
+//     // height: 100vh; /* секція на весь екран */
+//   }

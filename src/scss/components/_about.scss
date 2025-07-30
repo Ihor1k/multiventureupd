@@ -1,0 +1,151 @@
+.about {
+    border-radius: 20px 20px 0 0;
+    background: #EAE6E2;   
+    margin-top: 206px; 
+    padding: 60px 0 220px 0;
+    @media screen and (max-width: 480px) {
+        border-radius: 26px 26px 0 0;
+        margin-top: 116px;
+        padding: 40px 0 100px 0;
+    }
+}
+
+.about-suptitle {
+    padding: 4px 16px;
+    border-radius: 100px;
+    border: 1px solid #89868B;
+
+    color: var(--primary-100, #726968);
+    font-family: "Nunito Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2; /* 24px */
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    margin-bottom: 60px;
+}
+
+.about-title {
+    color: var(--primary-400, #282828);
+    font-family: "Nunito Sans";
+    font-size: clamp(24px, 2vw, 32px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.1; /* 35.2px */
+    max-width: 543px;
+    width: 100%;
+}
+
+.about-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    @media screen and (max-width: 480px) {
+        flex-direction: column;
+    }
+}
+
+.about-list:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.about-item {
+    position: relative;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    border: none;
+    gap: 120px;
+    overflow: hidden;
+    @media screen and (max-width: 480px) {
+        gap: 40px;   
+        padding: 16px;
+    }
+}
+
+.white {
+    background: #FFFDF9;
+}
+
+.mobile-white {
+    @media screen and (max-width: 480px) {
+        background: #FFFDF9 !important; 
+    }
+}
+
+.dark {
+    background: var(--neutral-400, #DAD4D0);
+}
+
+.mobile-dark {
+    @media screen and (max-width: 480px) {
+        background: var(--neutral-400, #DAD4D0) !important;
+    }
+}
+
+.about-item-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @media screen and (max-width: 480px) {
+        display: none;   
+    }
+}
+
+
+.about-item-title {
+    color: var(--primary-200, #4C4648);
+    font-family: "Open Sans";
+    font-size: clamp(24px, 2vw, 30px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1; /* 30px */
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.strong {
+    font-weight: 700;
+}
+
+.about-item-text {
+    transform: translateY(22px);
+    transition: all 0.4s ease; /* Анімація виїзду */
+
+    max-width: 498px;
+    width: 100%;
+    color: var(--primary-200, #4C4648);
+
+    /* body-small */
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4; /* 22.4px */
+    z-index: 2;
+    @media screen and (max-width: 480px) {
+        transform: unset;   
+    }
+}
+
+.about-item:hover .about-item-text {
+    transform: translateY(0); /* При ховері виїжджає */
+}
+
+.about-block {
+    overflow: hidden;
+}
+
+.big-text {
+    max-width: 726px;
+    width: 100%;
+}

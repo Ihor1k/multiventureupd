@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiventure</title>
+  <link rel="stylesheet" href="./src/scss/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="header-logo">
+          <a href="/"
+            ><img
+              src="./src/images/logo.svg"
+              width="244"
+              height="28"
+              alt="Logo"
+          /></a>
+        </div>
+
+        <div class="burger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z" fill="#282828"/>
+          </svg>
+        </div>
+
+        <div class="header-menu">
+          <div class="burger-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="#5C5A5B"/>
+            </svg>
+          </div>
+          <a href="#about" class="header-link">About Us </a>
+          <a href="#services" class="header-link">Services</a>
+          <a href="#why" class="header-link">Why choose Us</a>
+          <a href="#process" class="header-link">Process</a>
+
+        </div>
+
+        <div class="header-buttons mobile-visible">
+          <button class="header-button">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+   <!-- Попап -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup">
+      <div class="popup-inner">
+        <div class="popup-context">
+          <h3>Let’s stay in touch !</h3>
+        </div>
+
+        <form class="popup-form" id="joinForm">
+          <label for="name">Name<span>*</span></label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            required
+          />
+
+          <label for="email">E-mail Adress<span>*</span></label>
+          <input
+            type="email"
+            id="email"
+            placeholder="E-mail"
+            required
+          />
+          <div class="popup-wrapper">
+            <button type="popup" class="popup-btn">
+              Get in Touch
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <span class="close-popup">&times;</span>
+    </div>
+  </div>
+
+  <div id="successPopup" class="popup-overlay">
+    <div class="popup message-popup">
+      <img src="./src/images/message-bg.svg" alt="" class="message-bg">
+      <span class="close-popup">&times;</span>
+      <div class="popup-block message-block">
+        <p class="message-popup-title">All set!</p>
+        <p class="message-popup-text">
+          Thanks — we’re already looking into it.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="errorPopup" class="popup-overlay">
+    <div class="popup message-popup">
+      <img src="./src/images/popup.png" class="popup-img" alt="" />
+      <span class="close-popup">&times;</span>
+      <div class="popup-block message-block">
+        <p class="message-popup-title">Something went wrong.</p>
+        <p class="message-popup-text">
+          Please try again or check your internet connection.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <img class="hero-bg" src="./src/images/hero-bg.png" alt="" />
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-block">
+          <p class="hero-suptitle">Smart Marketing</p>
+          <h1 class="hero-title">Real Results</h1>
+          <div class="hero-content">
+            <p class="hero-text">From design and content to contextual advertising and social media growth.</p>
+            <p class="hero-subtext">In today’s competitive digital space, marketing must be more than just creative — it has to be effective. At Multiventure, we help businesses of all sizes navigate the complex world of online marketing.</p>
+          </div>
+          <div class="hero-buttons">
+            <button class="hero-btn">Get in Touch</button>
+            <button href="#services" class="hero-explore">Explore Services</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about sticky-section">
+    <div class="container">
+      <div class="about-header">
+        <p class="about-suptitle">About</p>
+        <div class="about-content">
+          <h2 class="about-title">Multiventure grows brands with strategy, creativity, and precision.</h2>
+          <div class="about-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <mask id="mask0_4001_190" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="30" height="30">
+                <path d="M30 0H0V30H30V0Z" fill="white"/>
+              </mask>
+              <g mask="url(#mask0_4001_190)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 2.5L9.375 12.4877H20.625L15 2.5Z" stroke="#B8B4B3" stroke-linejoin="round"/>
+                <path d="M15 12.4878L15.0052 27.5" stroke="#B8B4B3" stroke-linecap="round"/>
+                <path d="M7.09164 16.2341L1.25 26.2501H10.6278" stroke="#B8B4B3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.6875 19.3719H10.6277" stroke="#B8B4B3" stroke-linecap="round"/>
+                <path d="M22.9673 16.2341L28.8089 26.2501H19.375" stroke="#B8B4B3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24.4338 19.3719H19.4375" stroke="#B8B4B3" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-list">
+        <div class="about-item white">
+          <img src="./src/images/about-bg1.svg" alt="" class="about-item-bg">
+          <h3 class="about-item-title">Who <span class="strong">We Are</span></h3>
+          <div class="about-block">
+            <p class="about-item-text">We are a team of marketers, designers, analysts, and content creators who work together to build marketing systems that convert. Based on a foundation of technical expertise and creative thinking, we deliver solutions that are built to scale with....</p>
+          </div>
+        </div>
+        <div class="about-item dark">
+          <img src="./src/images/about-bg2.svg" alt="" class="about-item-bg">
+          <h3 class="about-item-title">What <span class="strong">We Stand For</span></h3>
+          <div class="about-block">
+            <p class="about-item-text big-text">We believe that successful marketing is equal parts strategy and execution. That’s why we focus not only on creative output, but also on how it performs. Every campaign we run, every website we design, and every piece of content we create is rooted in your objectives and backed by data. Multiventure isn’t just a service provider — we’re a long-term partner committed to your growth.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-list">
+        <div class="about-item dark mobile-white">
+          <img src="./src/images/about-bg3.svg" alt="" class="about-item-bg">
+          <h3 class="about-item-title">Who <span class="strong">We Work With</span></h3>
+          <div class="about-block">
+            <p class="about-item-text big-text">Multiventure works with companies across a range of industries, including fintech, SaaS, 
+              e-commerce, entertainment, and professional services. Whether you're a startup looking to establish your digital presence or a growing business ready to scale, we offer the depth of service and agility to support your next stage.</p>
+          </div>
+        </div>
+        <div class="about-item white mobile-dark">
+          <img src="./src/images/about-bg4.svg" alt="" class="about-item-bg">
+          <h3 class="about-item-title">Why <span class="strong">It Works</span></h3>
+          <div class="about-block">
+            <p class="about-item-text">We don’t operate in silos — we align strategy, design, content, and media into a unified, results-oriented framework. This full-funnel approach ensures every part of your digital presence supports your brand and contributes to real business outcomes.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="services" class="info sticky-section">
+    <div class="container">
+      
+      <div class="info-inner">
+        <div class="info-left">
+          <div class="info-content">
+            <p class="info-suptitle">What We Do</p>
+            <h3 class="info-title">We provide a comprehensive suite 
+              of digital marketing services</h3>
+          </div>
+          <div class="info-buttons">
+            <button class="info-button-prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M6 11.9961H18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 18L6 12L12 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Prev</button>
+            <button class="info-button-next">Next 
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                <path d="M18.5 11.9961H6.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.5 18L18.5 12L12.5 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="info-right swiper">
+
+          <div class="swiper-wrapper">
+            <div class="swiper-slide info-slide">
+              <h4 class="title"><span class="bold">Website</span> <br> Development & SEO</h4>
+              <p class="text">Your website should do more than just look good — it should convert visitors into customers. We design responsive, modern websites that balance aesthetics with performance, and optimize them for search visibility from the ground up
+              </p>
+              <p class="suptitle">Services Include:</p>
+              <div class="list">
+                <div class="item">
+                  <p class="item-text">Custom design and branded content structure</p>
+                </div>
+                <div class="item">
+                  <p class="item-text">Mobile-first development with intuitive navigation</p>
+                </div>
+                <div class="item">
+                  <p class="item-text">On-page SEO and keyword strategy </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide info-slide">
+              <h4 class="title"><span class="bold">Social Media</span> <br> Marketing</h4>
+              <p class="text">Social platforms are where brands come alive. We help you build a strong presence across Facebook, Instagram, LinkedIn, and beyond — combining storytelling, engagement, and paid promotion to drive real growth
+              </p>
+              <p class="suptitle">Services Include:</p>
+              <div class="list">
+                <div class="item">
+                  <p class="item-text">Organic content planning and creation</p>
+                </div>
+                <div class="item">
+                  <p class="item-text">Audience engagement strategies and follower growth</p>
+                </div>
+                <div class="item">
+                  <p class="item-text">Targeted social media ads and influencer outreach</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide info-slide">
+              <h4 class="title"><span class="bold">Creative Content</span> <br> & Brand Visibility SEO</h4>
+              <p class="text">From compelling copy to scroll-stopping videos, content is at the core of our marketing approach. Our creative team produces assets that speak your audience’s language — and positions your brand for credibility and recognition
+              </p>
+              <p class="suptitle">Deliverables Include:</p>
+              <div class="list">
+                <div class="item">
+                  <p class="item-text">Landing page and blog copywriting</p>
+                </div>
+                <div class="item">
+                  <p class="item-text">Scripted and edited videos for campaigns or brand intros</p>
+                </div>
+                <div class="item">
+                  <p class="item-text">Content placement on specialized industry platforms</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide info-slide">
+              <h4 class="title"><span class="bold">Image Management</span> <br> & Brand Perception </h4>
+              <p class="text">Your brand is more than a logo — it’s a perception. We help shape how you're seen through digital PR, narrative positioning, and visual consistency across channels
+              </p>
+              <p class="suptitle">Scope of Work:</p>
+              <div class="list">
+                <div class="item">
+                  <p class="item-text">Strategic brand messaging and tone of voice</p>
+                </div>
+                <div class="item">
+                  <p class="item-text">Media placements and expert content features</p>
+                </div>
+                <div class="item">
+                  <p class="item-text">Reputation monitoring and response frameworks </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+    <div id="why" class="why">
+      <div class="why-overlay"></div>
+      <img src="./src/images/why-bg.png" alt="" class="why-bg">
+      <div class="container">
+        <p class="why-suptitle">Features</p>
+        <div class="why-content">
+          <h3 class="why-title">Our features reflect a commitment to effectiveness, transparency, and client success</h3>
+          <div class="why-buttons">
+            <button class="why-button-prev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M6 11.9961H18" stroke="#FDFDFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 18L6 12L12 6" stroke="#FDFDFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button class="why-button-next">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18 11.9961H6" stroke="#FDFDFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 18L18 12L12 6" stroke="#FDFDFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="swiper why-swiper">
+          <div class="swiper-wrapper why-wrapper">
+            
+            <div class="swiper-slide why-slide">
+              <div class="why-slide-content">
+                <h4 class="slide-title"><span class="weight">Strategic</span><br> Customization</h4>
+                <img src="./src/images/why1.svg" width="24" height="24" alt="" class="slide-icon">
+              </div>
+              <p class="slide-text">Every project we take on is tailored to your specific goals. We don’t rely on templates or fixed frameworks — we develop marketing strategies based on your business model, audience behavior, and growth trajectory</p>
+            </div>
+
+            <div class="swiper-slide why-slide">
+              <div class="why-slide-content">
+                <h4 class="slide-title"><span class="weight">Cross-Platform</span><br> Expertise</h4>
+                <img src="./src/images/why2.svg" width="24" height="24" alt="" class="slide-icon">
+              </div>
+              <p class="slide-text">We work across all major marketing platforms — from Google Ads and Meta to emerging ad networks and social ecosystems — ensuring your campaigns reach the right audience, in the right format, at the right time</p>
+            </div>
+
+            <div class="swiper-slide why-slide">
+              <div class="why-slide-content">
+                <h4 class="slide-title"><span class="weight">Content-Led</span><br> Approach</h4>
+                <img src="./src/images/why3.svg" width="24" height="24" alt="" class="slide-icon">
+              </div>
+              <p class="slide-text">Our belief is that good content powers every channel. Whether it's a landing page, social post, 
+                or video ad, we create content that captures attention, delivers value, and drives action</p>
+            </div>
+
+            <div class="swiper-slide why-slide">
+              <div class="why-slide-content">
+                <h4 class="slide-title"><span class="weight">Full-Funnel</span><br> Marketing</h4>
+                <img src="./src/images/why4.svg" width="24" height="24" alt="" class="slide-icon">
+              </div>
+              <p class="slide-text">We don’t stop at awareness. Our strategies cover the entire customer journey — from discovery to decision and beyond. That means aligning ad strategy, content, and design into one coherent performance system</p>
+            </div>
+
+            <div class="swiper-slide why-slide">
+              <div class="why-slide-content">
+                <h4 class="slide-title"><span class="weight">Conversion-Driven</span><br> Design</h4>
+                <img src="./src/images/why5.svg" width="24" height="24" alt="" class="slide-icon">
+              </div>
+              <p class="slide-text">All of our creative work — websites, landing pages, UI enhancements — is designed with user behavior in mind. We focus on intuitive structure, seamless navigation, and design choices that guide users toward conversion</p>
+            </div>
+
+            <div class="swiper-slide why-slide">
+              <div class="why-slide-content">
+                <h4 class="slide-title"><span class="weight">Agile</span><br> Execution</h4>
+                <img src="./src/images/why6.svg" width="24" height="24" alt="" class="slide-icon">
+              </div>
+              <p class="slide-text">Speed matters in digital. Our team works with efficiency and flexibility, launching campaigns and delivering assets quickly without compromising on quality. This allows us to respond to data, trends, and business needs in real time</p>
+            </div>
+            
+
+          </div>  
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section id="process" class="pro">
+    <div class="container">
+      <div class="pro-inner">
+        <div class="pro-content">
+          <p class="pro-suptitle">Our Process</p>
+          <h3 class="pro-title">We approach every project with a clear roadmap and performance focus</h3>
+        </div>
+        <div class="pro-list">
+          <div class="pro-item">
+            <img src="./src/images/pro-card1.svg" alt="Discovery 
+            & Planning We dive deep into your brand, market, and objectives to build a campaign blueprint">
+          </div>
+          <div class="pro-item">
+            <img src="./src/images/pro-card2.svg" alt="Creative 
+            & Setup Content, design & integration — everything to launch.">
+          </div>
+          <div class="pro-item">
+            <img src="./src/images/pro-card3.svg" alt="Launch 
+            & Monitor Campaigns go live with full performance tracking and budget oversight">
+          </div>
+          <div class="pro-item">
+            <img src="./src/images/pro-card4.svg" alt="Optimize 
+            & Scale Based on real-time data, we refine, retarget, and expand for sustained growth">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="step">
+    <img class="step-bg" src="./src/images/step-bg.png" alt="">
+    <div class="container step-block">
+      <div class="step-inner">
+        <h3 class="step-title">Ready to Take the Next Step?</h3>
+        <p>Start your marketin gjourney with multiventure <br> Whether you're launching a product or scaling your brand, we're ready to help you grow faster, smarter, and more confidently</p>
+        <button class="button">
+          Talk to Our expert
+        </button>
+      </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <img src="./src/images/footer-logo.svg" alt="">
+      <p class="copywriting"> © 2025 Multiventure Ltd. All rights reserved</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</body>
+</html>

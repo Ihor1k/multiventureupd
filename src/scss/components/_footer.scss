@@ -1,0 +1,22 @@
+.footer {
+    position: relative;
+    border-radius: 20px 20px 0 0;
+    background: var(--primary-200, #4C4648);
+    padding: 48px 0;
+    z-index: 6;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copywriting {
+    color: var(--neutral-600, #B8B4B3);
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+}
